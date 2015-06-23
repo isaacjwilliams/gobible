@@ -1,5 +1,7 @@
-defmodule Issues.CLI do
-  
+defmodule Gobible.CLI do
+
+  import Gobible.APIGobible
+
   def run(argv) do
     parse_args(argv)
   end
@@ -39,6 +41,11 @@ defmodule Issues.CLI do
     """
 
     System.halt(0)
+  end
+
+  def process({ book, chapter, verse }) do
+    fetch({ book, chapter, verse })
+    |> handle_response
   end
 
 end

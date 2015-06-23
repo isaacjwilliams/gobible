@@ -14,7 +14,7 @@ defmodule Gobible.Mixfile do
   #
   # Type `mix help compile.app` for more information
   def application do
-    [applications: [:logger]]
+    [applications: [:logger, :httpoison, :exjsx]]
   end
 
   # Dependencies can be Hex packages:
@@ -27,6 +27,9 @@ defmodule Gobible.Mixfile do
   #
   # Type `mix help deps` for more examples and options
   defp deps do
-    []
+    [
+      { :httpoison, "~> 0.4" },
+      { :exjsx, "~> 3.0" }
+    ]
   end
 end
